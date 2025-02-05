@@ -1,4 +1,4 @@
-export declare class RobotstxtWriter {
+export declare class RobotsTxt {
     private directives: { userAgent: string; directive: string; value: string }[];
 
     constructor();
@@ -21,5 +21,5 @@ export declare class RobotstxtWriter {
 /**
  * Default export for CommonJS compatibility.
  */
-declare const _default: { RobotstxtWriter: typeof RobotstxtWriter };
+declare const _default: { RobotsTxt: typeof RobotsTxt };
 export default _default;

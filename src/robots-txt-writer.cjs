@@ -1,4 +1,4 @@
-export class RobotstxtWriter {
+class RobotsTxt {
     constructor() {
       this.directives = [];
     }
@@ -33,5 +33,5 @@ export class RobotstxtWriter {
     }
   }
   
-export default {RobotstxtWriter};
+module.exports = {RobotsTxt};
   
