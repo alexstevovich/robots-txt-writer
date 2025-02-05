@@ -1,30 +1,31 @@
 {
     "name": "robots-txt-writer",
-    "version": "1.0.0",
+    "version": "1.0.0-beta.1",
     "description": "A lightweight and efficient library for generating robots.txt files programmatically.",
     "main": "src/robotstxt-writer.mjs",
     "module": "src/robotstxt-writer.mjs",
     "types": "src/robotstxt-writer.d.ts",
     "type": "module",
     "exports": {
-      "import": "src/robotstxt-writer.mjs",
-      "require": "src/robotstxt-writer.cjs"
+        "import": "src/robotstxt-writer.mjs",
+        "require": "src/robotstxt-writer.cjs"
     },
-    "files": ["src/"],
+    "files": [
+        "src/"
+    ],
     "keywords": [
-      "robots.txt",
-      "robots",
-      "crawler",
-      "search-engine",
-      "seo",
-      "web",
-      "web-crawler"
+        "robots.txt",
+        "robots",
+        "crawler",
+        "search-engine",
+        "seo",
+        "web",
+        "web-crawler"
     ],
     "repository": {
-      "type": "git",
-      "url": "https://github.com/alexstevovich/robotstxt-writer-node"
+        "type": "git",
+        "url": "https://github.com/alexstevovich/robotstxt-writer-node"
     },
     "author": "Alex Stevovich",
     "license": "MIT"
-  }
-  
+}
