@@ -1,6 +1,6 @@
 {
     "name": "robots-txt-writer",
-    "version": "1.0.0-beta.2",
+    "version": "1.0.0-beta.3",
     "description": "A lightweight and efficient library for generating robots.txt files programmatically.",
     "main": "src/robots-txt-writer.mjs",
     "module": "src/robots-txt-writer.mjs",
