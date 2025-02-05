@@ -1,42 +1,92 @@
-# RobotstxtWriter
+# Robots.txt Writer
 
-## Description
-**RobotstxtWriter** is a lightweight and efficient library for generating `robots.txt` files programmatically in Node.js. It allows adding directives dynamically and outputting the final robots.txt content as a string.
+A **lightweight**, **modular**, and **professional-grade** utility for generating `robots.txt` files.
+Designed for **server-side rendering (SSR)**, **static site generation (SSG)**, and **custom rule management**.
+
+## Features
+
+✅ **Easy-to-use API** – Simple methods for adding directives.
+✅ **Supports all standard `robots.txt` directives** – `User-agent`, `Allow`, `Disallow`, `Crawl-delay`, `Sitemap`, etc.
+✅ **Automates formatting** – Ensures correct spacing and structure.
+✅ **Works with both CommonJS (`require`) and ESM (`import`)**.
+
+---
 
 ## Installation
+
 ```sh
-npm install robotstxt-writer
+npm install robots-txt-writer
 ```
+
+or using Yarn:
+
+```sh
+yarn add robots-txt-writer
+```
+
+---
 
 ## Usage
-```javascript
-import { RobotstxtWriter } from "robotstxt-writer";
 
-const writer = new RobotstxtWriter();
-writer.addDirective("*", "Disallow", "/admin");
-writer.addDirective("*", "Allow", "/public");
-writer.addDirective("Googlebot", "Crawl-delay", "10");
+### **Basic Example**
+```js
+import { RobotsTxt } from "robots-txt-writer";
 
-console.log(writer.write());
+const robots = new RobotsTxt();
+robots.addDirective("*", "Disallow", "/private");
+robots.addDirective("Googlebot", "Allow", "/public");
+robots.addDirective("*", "Sitemap", "https://example.com/sitemap.xml");
+
+console.log(robots.write());
 ```
 
-### Output
-```
+**➡ Outputs:**
+```txt
 User-agent: *
-Disallow: /admin
-Allow: /public
+Disallow: /private
 
 User-agent: Googlebot
-Crawl-delay: 10
+Allow: /public
+
+User-agent: *
+Sitemap: https://example.com/sitemap.xml
 ```
 
-## API
-### `addDirective(userAgent: string, directive: string, value: string): void`
-Adds a directive to the robots.txt file.
+---
 
-### `write(): string`
-Outputs the formatted robots.txt content as a string.
+## API Reference
+
+### **🔹 Class: `RobotsTxt`**
+Handles `robots.txt` rule creation and formatting.
+
+#### **Method: `addDirective(userAgent: string, directive: string, value: string)`**
+Adds a rule to the `robots.txt` file.
+
+#### **Example:**
+```js
+robots.addDirective("Bingbot", "Crawl-delay", "10");
+```
+
+---
+
+#### **Method: `write(): string`**
+Generates the formatted `robots.txt` content as a string.
+
+#### **Example:**
+```js
+console.log(robots.write());
+```
+
+---
+
+## Best Practices
+- Group rules by `User-agent` to maintain clarity.
+- Use `*` for directives applying to all bots.
+- Include a `Sitemap` entry to assist search engines.
+
+---
 
 ## License
-MIT License
+
+Released under the **MIT License**.
 
